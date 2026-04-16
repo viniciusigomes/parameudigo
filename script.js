@@ -1,6 +1,8 @@
         let simSize = 1;
         const btnNao = document.getElementById('btnNao');
         const toggleImage = document.getElementById('toggleImage');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
 
         const gifUrl = 'img/gatinhos.gif';
         const photoUrl = 'img/nós.jpeg';
@@ -33,10 +35,13 @@
             aumentarSim(0.1);
             aceitar();
             // Iniciar música
-            const backgroundMusic = document.getElementById('backgroundMusic');
             if (backgroundMusic) {
                 backgroundMusic.volume = 0.3;
                 backgroundMusic.play().catch(e => console.log('Erro ao tocar música:', e));
+                // Update button to pause
+                if (playPauseBtn) {
+                    playPauseBtn.innerHTML = '<img src="img/pause.png" alt="Pause">';
+                }
             }
         }
 
@@ -90,6 +95,21 @@
 
         if (toggleImage) {
             toggleImage.addEventListener('click', trocarImagem);
+        }
+
+        // Music player controls
+        function togglePlayPause() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play().catch(e => console.log('Erro ao tocar música:', e));
+                playPauseBtn.innerHTML = '<img src="img/pause.png" alt="Pause">';
+            } else {
+                backgroundMusic.pause();
+                playPauseBtn.innerHTML = '<img src="img/play.png" alt="Play">';
+            }
+        }
+
+        if (playPauseBtn) {
+            playPauseBtn.addEventListener('click', togglePlayPause);
         }
 
  

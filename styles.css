@@ -237,6 +237,52 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        .player-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-btn:hover {
+            opacity: 0.7;
+        }
+
+        .control-btn img, .control-btn span {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #prevBtn, #nextBtn {
+            width: 45px;
+            height: 45px;
+        }
+
+        #prevBtn img, #nextBtn img {
+            width: 26px;
+            height: 26px;
+        }
+
+        #playPauseBtn img {
+            width: 22px;
+            height: 22px;
+        }
+
         .song-title {
             font-size: 1em;
             font-weight: bold;
@@ -267,6 +313,32 @@
 
             .artist {
                 font-size: 0.75em;
+            }
+
+            .control-btn {
+                width: 35px;
+                height: 35px;
+            }
+
+            .control-btn img, .control-btn span {
+                width: 18px;
+                height: 18px;
+                font-size: 18px;
+            }
+
+            #prevBtn, #nextBtn {
+                width: 40px;
+                height: 40px;
+            }
+
+            #prevBtn img, #nextBtn img {
+                width: 24px;
+                height: 24px;
+            }
+
+            #playPauseBtn img {
+                width: 20px;
+                height: 20px;
             }
         }
 
