@@ -4,15 +4,20 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            overflow: hidden;
+            padding: 40px 20px;
+            overflow-x: hidden;
         }
 
         .container {
@@ -23,6 +28,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             max-width: 500px;
             animation: fadeIn 1s ease-in-out;
+            margin: 20px 0;
         }
 
         @keyframes fadeIn {
